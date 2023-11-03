@@ -47,7 +47,7 @@ class MenuPage extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(50), // NEW
                     ),
-                    onPressed: () => { Navigator.pushNamed(context, '/') },
+                    onPressed: () => { Navigator.pushNamed(context, '/configuration') },
                     child: const Text('Configurações')),
               )
             ],

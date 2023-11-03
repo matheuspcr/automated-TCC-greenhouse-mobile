@@ -11,7 +11,10 @@ class DioHelper {
   }
 
   static buildDioClient() {
-    _dioInstance = Dio();
+    _dioInstance = Dio(BaseOptions(
+        contentType: Headers.jsonContentType,
+        responseType: ResponseType.json
+    ));
     _dioInstance?.interceptors.add(LogInterceptor());
   }
 }

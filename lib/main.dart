@@ -1,3 +1,4 @@
+import 'package:automated_tcc_greenhouse_mobile/features/configs/page/configuration_page.dart';
 import 'package:automated_tcc_greenhouse_mobile/features/controller/page/controller_page.dart';
 import 'package:flutter/material.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/dashboard': (context) => const DashboardPage(),
         '/controller': (context) => const ControllerPage(),
         '/chart': (context) => const ChartPage(),
+        '/configuration': (context) => const ConfigurationPage(),
       },
     );
   }

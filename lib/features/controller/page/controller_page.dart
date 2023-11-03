@@ -19,7 +19,11 @@ class _ControllerPageState extends State<ControllerPage> {
   void _changeActuator(String actuator, String toggle) {
     client
         .toggleActuator(ActuatorChangeRequest(actuator, toggle))
-        .then((value) => {setState(() {})});
+        .then((value) => {setState(() {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(value),
+      ));
+    })});
   }
 
   @override
@@ -75,7 +79,7 @@ class _ControllerPageState extends State<ControllerPage> {
                           style: ElevatedButton.styleFrom(
                               backgroundColor: green,
                               minimumSize: const Size(120, 35)),
-                          onPressed: () => {_changeActuator("agua", "ligar")},
+                          onPressed: () => {_changeActuator("rega", "ligar")},
                           child: const Text('Ligar')),
                     ),
                     Padding(
@@ -85,7 +89,7 @@ class _ControllerPageState extends State<ControllerPage> {
                               backgroundColor: red,
                               minimumSize: const Size(120, 35)),
                           onPressed: () =>
-                              {_changeActuator("agua", "desligar")},
+                              {_changeActuator("rega", "desligar")},
                           child: const Text('Desligar')),
                     ),
                   ],

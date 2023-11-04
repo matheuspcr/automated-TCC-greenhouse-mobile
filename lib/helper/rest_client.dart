@@ -24,8 +24,8 @@ abstract class RestClient {
   @GET('/getSeeds')
   Future<List<String>> getSeeds();
 
-  @GET('/getSeeds/{seed}')
-  Future<SeedEntity> getSeedDetails(@Path('seed') String seed);
+  @GET('/getSeeds')
+  Future<SeedEntity> getSeedDetails(@Query('seed') String seed);
 
   @POST('/updateSeed')
   Future<void> updateSeed(@Body() String seed);

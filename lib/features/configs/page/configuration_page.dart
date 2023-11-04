@@ -12,8 +12,8 @@ class ConfigurationPage extends StatefulWidget {
 
 class _ConfigurationPageState extends State<ConfigurationPage> {
   final client = RestClient(DioHelper.getDio());
-  static const List<String> seedList = <String>['Maracujá', 'Morango', 'Banana', 'Pera', 'Maça', 'Arroz', 'Feijão', 'Lentilha'];
-  String seedSelected = '';
+  static const List<String> seedList = <String>['Maracuja', 'Morango', 'Banana', 'Pera', 'Arroz', 'Lentilha'];
+  String seedSelected = 'Maracuja';
 
   String temperaturaIdeal = '';
   String umidadeIdeal = '';
@@ -22,15 +22,6 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
   String potassioIdeal = '';
   String fosforoIdeal = '';
   String phSoloIdeal = '';
-
-  // void _getSeeds() {
-  //   client.getSeeds().then((value) => {
-  //         seedSelected = seedList[0],
-  //         setState(() {
-  //           _getSeedDetail();
-  //         })
-  //       });
-  // }
 
   void _getSeedDetail() {
     client.getSeedDetails(seedSelected).then((value) => {
@@ -85,6 +76,7 @@ class _ConfigurationPageState extends State<ConfigurationPage> {
                       // This is called when the user selects an item.
                       setState(() {
                         seedSelected = value!;
+                        _getSeedDetail();
                       });
                     },
                     items:

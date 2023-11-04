@@ -1,6 +1,5 @@
 import 'package:automated_tcc_greenhouse_mobile/entities/request/actuator_change_request.dart';
 import 'package:automated_tcc_greenhouse_mobile/helper/rest_client.dart';
-import '../../../custom_widgets/default_text.dart';
 import '../../../helper/dio_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -94,35 +93,6 @@ class _ControllerPageState extends State<ControllerPage> {
                     ),
                   ],
                 ),
-                const Padding(
-                    padding: EdgeInsets.only(top: 32),
-                    child: Text("Ventilação",
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold))),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8, right: 16),
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: green,
-                              minimumSize: const Size(120, 35)),
-                          onPressed: () => {_changeActuator("ventilacao", "ligar")},
-                          child: const Text('Ligar')),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8, left: 16),
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: red,
-                              minimumSize: const Size(120, 35)),
-                          onPressed: () =>
-                          {_changeActuator("ventilacao", "desligar")},
-                          child: const Text('Desligar')),
-                    ),
-                  ],
-                )
               ],
             )));
   }

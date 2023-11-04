@@ -92,7 +92,7 @@ class _RestClient implements RestClient {
   @override
   Future<SeedEntity> getSeedDetails(String seed) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'seed': seed};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
@@ -103,7 +103,7 @@ class _RestClient implements RestClient {
     )
             .compose(
               _dio.options,
-              '/getSeeds/${seed}',
+              '/getSeeds',
               queryParameters: queryParameters,
               data: _data,
             )

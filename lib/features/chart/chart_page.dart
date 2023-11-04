@@ -28,7 +28,7 @@ class ChartPage extends StatelessWidget {
                           _ChartData('Jun', 4),
                           _ChartData('Jul', 5),
                           _ChartData('Ago', 2),
-                          _ChartData('Set', 100),
+                          _ChartData('Set', 12),
                           _ChartData('Out', 2),
                           _ChartData('Nov', 1),
                           _ChartData('Dez', 0),
